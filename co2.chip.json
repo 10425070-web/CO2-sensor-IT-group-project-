@@ -8,7 +8,7 @@
       "label": "CO2 (ppm)",
       "type": "range",
       "min": 0,
-      "max": 1600,
+      "max": 4095,
       "step": 1
     }
   ]
