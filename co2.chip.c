@@ -14,8 +14,7 @@ static void update_output(void *user_data) {
 
   int ppm = attr_read(chip->attr_co2ppm);
 
-  // map 400..5000 ppm -> 0..5V
-  float voltage = ((float)(ppm - 0) / (1600.0f - 0.0f)) * 5.0f;
+  float voltage = ((float)ppm / 4095.0f) * 5.0f;
   if (voltage < 0.0f) voltage = 0.0f;
   if (voltage > 5.0f) voltage = 5.0f;
 
@@ -36,6 +35,6 @@ void chip_init(void) {
 
   chip->timer = timer_init(&timer_config);
 
-  update_output(chip);                 // push initial value immediately
-  timer_start(chip->timer, 100000, true); // refresh every 100 ms
+  update_output(chip);
+  timer_start(chip->timer, 100000, true);
 }
