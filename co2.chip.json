@@ -1,0 +1,15 @@
+{
+  "name": "CO2 Slider Sensor",
+  "author": "LAN MAC HOANG",
+  "pins": ["VCC", "GND", "OUT"],
+  "controls": [
+    {
+      "id": "co2ppm",
+      "label": "CO2 (ppm)",
+      "type": "range",
+      "min": 0,
+      "max": 1600,
+      "step": 1
+    }
+  ]
+}
