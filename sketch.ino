@@ -35,9 +35,7 @@ enum AirLevel {
 };
 
 int readCO2ppm() {
-  int raw = analogRead(CO2_PIN);
-  int ppm = map(raw, 0, 4095, 400, 5000);
-  return constrain(ppm, 0, 2000);
+  return analogRead(CO2_PIN);
 }
 
 AirLevel getCO2Level(int ppm) {
@@ -91,7 +89,7 @@ void showOnLCD1(float temp, float hum) {
 }
 
 void showOnLCD2(int co2ppm, AirLevel overall) {
-  printFixed(lcd2, 0, 0, "CO2 :" + String(co2ppm));
+  printFixed(lcd2, 0, 0, "CO2 :" + String(co2ppm) + " ppm");
   printFixed(lcd2, 0, 1, "Air :" + levelToText(overall));
 }
 
