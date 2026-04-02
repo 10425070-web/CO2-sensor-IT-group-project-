@@ -45,14 +45,14 @@ AirLevel getCO2Level(int ppm) {
 }
 
 AirLevel getTempLevel(float temp) {
-  if (temp >= 20 && temp <= 28) return NORMAL;
-  if ((temp >= 18 && temp < 20) || (temp > 28 && temp <= 32)) return WARNING;
+  if (temp >= 18 && temp <= 28) return NORMAL;
+  if ((temp >= 14 && temp < 18) || (temp > 30 && temp <= 34)) return WARNING;
   return DANGER;
 }
 
 AirLevel getHumidityLevel(float hum) {
   if (hum >= 40 && hum <= 60) return NORMAL;
-  if ((hum >= 30 && hum < 40) || (hum > 60 && hum <= 70)) return WARNING;
+  if ((hum >= 28 && hum < 40) || (hum > 60 && hum <= 70)) return WARNING;
   return DANGER;
 }
 
