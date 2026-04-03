@@ -39,8 +39,8 @@ int readCO2ppm() {
 }
 
 AirLevel getCO2Level(int ppm) {
-  if (ppm < 800) return NORMAL;
-  if (ppm < 1500) return WARNING;
+  if (ppm <= 800) return NORMAL;
+  if (ppm <= 1500) return WARNING;
   return DANGER;
 }
 
